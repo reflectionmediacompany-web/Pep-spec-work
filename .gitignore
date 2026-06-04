@@ -32,3 +32,4 @@ Thumbs.db
 
 # vite cache
 node_modules/.vite
+.vite
