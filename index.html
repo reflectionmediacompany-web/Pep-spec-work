@@ -15,20 +15,31 @@
       rel="stylesheet"
     />
     <title>PEP – More Than Just a Price Tag</title>
-    <script type="module">
-      if (import.meta.hot?.on) {
-        import.meta.hot.on('vite:error', (error) => {
-          if (error.err) {
-            console.error(
-              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
-            )
-          }
-        })
-      }
-    </script>
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function () {
+        const isFile = location.protocol === 'file:'
+        if (isFile) {
+          const css = document.createElement('link')
+          css.rel = 'stylesheet'
+          css.href = './assets/index-BC3ggPax.css'
+          document.head.appendChild(css)
+
+          const s = document.createElement('script')
+          s.type = 'module'
+          s.src = './assets/index-VRIPYLsw.js'
+          s.crossOrigin = 'anonymous'
+          document.body.appendChild(s)
+        } else {
+          const s = document.createElement('script')
+          s.type = 'module'
+          s.src = '/src/main.tsx'
+          document.body.appendChild(s)
+        }
+      })()
+    </script>
   </body>
 </html>
